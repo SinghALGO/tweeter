@@ -1,0 +1,12 @@
+#nav-header {
+  height: 400px;
+  width: 100vw;
+  background-color: #d4af48;
+  background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: content-box;
+  padding-top: 120px;
+}

@@ -13,3 +13,14 @@ nav {
 nav > span {
   font-family: "Bungee", sans-serif;
 }
+.right-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding-top: 2rem;
+  cursor: pointer;
+}
+.right-text i {
+  color: red;
+}
