@@ -1,0 +1,40 @@
+article {
+  margin-top: 3rem;
+  padding: 1rem;
+  border: 3px solid black;
+  margin-bottom: 1rem;
+  overflow-wrap: break-word;
+}
+article:hover {
+  box-shadow: 6px 6px 1px #a0b2ed;
+}
+article > header {
+  padding: 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.header-left {
+  display: flex;
+}
+.header-left img {
+  margin-right: 1rem;
+}
+article h4 {
+  padding: 1rem;
+  border-bottom: 3px solid black;
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+}
+.footer-right {
+  display: flex;
+  align-items: center;
+}
+i {
+  margin-left: 1rem;
+  color: #4056a1;
+}
+i:hover {
+  color: #d4af48;
+}
