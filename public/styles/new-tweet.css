@@ -26,3 +26,19 @@ textarea {
 .counter-red {
   color: red;
 }
+.error-container {
+  border: 4px solid red;
+  display: none;
+}
+.error-container-flex {
+  display: flex !important;
+  justify-content: space-around;
+}
+.error-container i {
+  color: red;
+  margin-top: 24px;
+}
+.error-container p {
+  color: red;
+  font-weight: bold;
+}

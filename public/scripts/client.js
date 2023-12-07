@@ -31,10 +31,19 @@ $(document).ready(() => {
 
   $("#tweet-form").submit((event) => {
     event.preventDefault();
+    $(".error-container").removeClass("error-container-flex");
+    $(".error-container").hide();
+    //Check if tweet is null or empty
     if ($("#tweet-text").val() === "" || $("#tweet-text").val() === null) {
-      alert("Empty or null");
-    } else if ($("#tweet-text").val().length > 140) {
-      alert("More than 140");
+      $(".error-container").slideDown("slow");
+      $(".error-container").addClass("error-container-flex");
+      $(".error-container").children("p").text("Tweet is empty");
+    }
+    //Check if tweet length is greater than 140
+    else if ($("#tweet-text").val().length > 140) {
+      $(".error-container").slideDown("slow");
+      $(".error-container").addClass("error-container-flex");
+      $(".error-container").children("p").text("Tweet length is more than 140");
     } else {
       $.ajax({
         type: "POST",
