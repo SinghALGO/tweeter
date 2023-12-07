@@ -16,8 +16,9 @@ $(document).ready(() => {
   };
 
   const renderTweets = function (tweets) {
+    $("#tweets-container").empty();
     for (const tweet of tweets) {
-      $("#tweets-container").append(createTweetElement(tweet));
+      $("#tweets-container").prepend(createTweetElement(tweet));
     }
   };
 
@@ -35,6 +36,7 @@ $(document).ready(() => {
         success: () => {
           $("#tweet-form")[0].reset();
           $(".counter").text(140);
+          loadtweets();
         },
       });
     }
