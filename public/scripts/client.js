@@ -5,9 +5,9 @@ $(document).ready(() => {
         tweet.user.avatars
       }" alt="user-avatar" /><p>${tweet.user.name}</p></div><p>${
         tweet.user.handle
-      }</p></header><h4>${
+      }</p></header><h4>${escape(
         tweet.content.text
-      }</h4><footer><p class="footer-left">${timeago.format(
+      )}</h4><footer><p class="footer-left">${timeago.format(
         tweet.created_at
       )}</p><div class="footer-right"><i class="fa-solid fa-flag"></i><i class="fa-solid fa-retweet"></i><i class="fa-solid fa-heart"></i></div></footer></article>`
     );
@@ -20,6 +20,13 @@ $(document).ready(() => {
     for (const tweet of tweets) {
       $("#tweets-container").prepend(createTweetElement(tweet));
     }
+  };
+
+  //Function to prevent cross client scripting
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
   };
 
   $("#tweet-form").submit((event) => {
