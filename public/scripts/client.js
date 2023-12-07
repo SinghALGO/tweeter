@@ -8,7 +8,7 @@ $(document).ready(() => {
       }</p></header><h4>${
         tweet.content.text
       }</h4><footer><p class="footer-left">${timeago.format(
-        tweet_obj.created_at
+        tweet.created_at
       )}</p><div class="footer-right"><i class="fa-solid fa-flag"></i><i class="fa-solid fa-retweet"></i><i class="fa-solid fa-heart"></i></div></footer></article>`
     );
 
@@ -23,15 +23,21 @@ $(document).ready(() => {
 
   $("#tweet-form").submit((event) => {
     event.preventDefault();
-    $.ajax({
-      type: "POST",
-      url: "/tweets",
-      data: $("#tweet-form").serialize(),
-      success: () => {
-        $("#tweet-form")[0].reset();
-        $(".counter").text(140);
-      },
-    });
+    if ($("#tweet-text").val() === "" || $("#tweet-text").val() === null) {
+      alert("Empty or null");
+    } else if ($("#tweet-text").val().length > 140) {
+      alert("More than 140");
+    } else {
+      $.ajax({
+        type: "POST",
+        url: "/tweets",
+        data: $("#tweet-form").serialize(),
+        success: () => {
+          $("#tweet-form")[0].reset();
+          $(".counter").text(140);
+        },
+      });
+    }
   });
 
   const loadtweets = function () {
