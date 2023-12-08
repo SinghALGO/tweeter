@@ -1,5 +1,5 @@
-$(document).ready(function () {
-  $("#tweet-text").on("input", function () {
+$(document).ready(function() {
+  $("#tweet-text").on("input", function() {
     $(this)
       .siblings("div")
       .children("output")

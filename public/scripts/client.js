@@ -1,5 +1,12 @@
 $(document).ready(() => {
+  //Write a new tweet form should be hidden when page is loaded, when user clicks Write a new tweet, then it will show
   $(".new-tweet").hide();
+
+  /**
+   *
+   * @param {*} object containing tweet
+   * @returns html
+   */
   const createTweetElement = function (tweet) {
     const $tweet = $(
       `<article><header><div class="header-left"><img src="${
@@ -15,7 +22,11 @@ $(document).ready(() => {
 
     return $tweet;
   };
-
+  /**
+   *
+   * @param {*} Array of tweets obejcts
+   * Calls createTweetElement for each array index and prepends it to tweets-container element
+   */
   const renderTweets = function (tweets) {
     $("#tweets-container").empty();
     for (const tweet of tweets) {
@@ -29,7 +40,7 @@ $(document).ready(() => {
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
-
+  //Event listener for form submission
   $("#tweet-form").submit((event) => {
     event.preventDefault();
     $(".error-container").hide();
@@ -58,7 +69,9 @@ $(document).ready(() => {
       });
     }
   });
-
+  /**
+   * Function to get data from the server
+   */
   const loadtweets = function () {
     $.ajax({
       type: "GET",
@@ -96,6 +109,7 @@ $(document).ready(() => {
       $("#button-scroll").fadeOut();
     }
   });
+  //Event listener for clicking the button that will scroll to the top
   $("#button-scroll").click(function () {
     $("html, body").animate(
       {
