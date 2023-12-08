@@ -1,4 +1,5 @@
 $(document).ready(() => {
+  $(".new-tweet").hide();
   const createTweetElement = function (tweet) {
     const $tweet = $(
       `<article><header><div class="header-left"><img src="${
