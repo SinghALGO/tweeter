@@ -16,21 +16,28 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+- Chance
+- md5
+- Body-parser
 
 ## Final Product
 
 ### Tweeter Homepage
 
-!["Homepage"]()
+!["Homepage"](https://raw.githubusercontent.com/SinghALGO/tweeter/master/docs/Screenshot%202023-12-07%20190752.png)
 
 ### Add a new tweet
 
-!["Add a new tweet"]()
+!["Add a new tweet"](https://raw.githubusercontent.com/SinghALGO/tweeter/master/docs/Screenshot%202023-12-07%20190849.png)
 
 ### Counter shows tweet exceeds length of 140
 
-!["Counter shows tweet exceeds length of 140"](
+!["Counter shows tweet exceeds length of 140"](https://raw.githubusercontent.com/SinghALGO/tweeter/master/docs/Screenshot%202023-12-07%20191050.png)
 
 ### Error when tweet exceeds length of 140
 
-!["Error when tweet exceeds length of 140"]()
+!["Error when tweet exceeds length of 140"](https://raw.githubusercontent.com/SinghALGO/tweeter/master/docs/Screenshot%202023-12-07%20191118.png)
+
+### Error when tweet is empty
+
+!["Error when tweet is empty"](https://raw.githubusercontent.com/SinghALGO/tweeter/master/docs/Screenshot%202023-12-07%20191146.png)
