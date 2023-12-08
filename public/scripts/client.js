@@ -31,8 +31,8 @@ $(document).ready(() => {
 
   $("#tweet-form").submit((event) => {
     event.preventDefault();
-    $(".error-container").removeClass("error-container-flex");
     $(".error-container").hide();
+    $(".error-container").removeClass("error-container-flex");
     //Check if tweet is null or empty
     if ($("#tweet-text").val() === "" || $("#tweet-text").val() === null) {
       $(".error-container").slideDown("slow");
@@ -68,4 +68,41 @@ $(document).ready(() => {
     });
   };
   loadtweets();
+
+  //Event listener for clicking "Write a new tweet" nav item
+  $(".right-text").click(() => {
+    if ($(".new-tweet").is(":hidden")) {
+      $(".new-tweet").slideDown("slow");
+    } else {
+      $("#tweet-form")[0].reset();
+      $(".counter").text(140);
+      $(".error-container").removeClass("error-container-flex");
+      $(".error-container").hide();
+      $(".new-tweet").slideUp();
+    }
+  });
+  //Event listener for scrolling the winow
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 200) {
+      $("nav").addClass("nav-transparent");
+      $(".right-text").hide();
+      $("#button-scroll").addClass("button-scroll-flex");
+      $("#button-scroll").fadeIn();
+    } else {
+      $(".right-text").slideDown();
+      $("nav").removeClass("nav-transparent");
+      $("#button-scroll").removeClass("button-scroll-flex");
+      $("#button-scroll").fadeOut();
+    }
+  });
+  $("#button-scroll").click(function () {
+    $("html, body").animate(
+      {
+        scrollTop: 0,
+      },
+      600
+    );
+    $(".new-tweet").slideDown("slow");
+    return false;
+  });
 });

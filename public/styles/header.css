@@ -10,3 +10,34 @@
   box-sizing: content-box;
   padding-top: 120px;
 }
+/* 
+Media Query for desktop */
+
+@media screen and (min-width: 1024px) {
+  #nav-header {
+    margin-top: 167px;
+    margin-right: 100px;
+    height: 280px;
+    width: 50%;
+    padding-top: 0;
+    display: block;
+  }
+  #nav-header div:first-child {
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #nav-header img {
+    height: 90%;
+  }
+  #nav-header div:nth-child(2) {
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #nav-header h2 {
+    margin: 0;
+  }
+}

@@ -57,34 +57,41 @@
         <i class="fa-solid fa-angles-down"></i>
       </div>
     </nav>
-    <header id="nav-header">
-      <div>
-        <img src="/images/profile-hex.png" />
-      </div>
-      <div>
-        <h2>Amy Mansell</h2>
-      </div>
-    </header>
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <div class="error-container">
-          <i class="fa-solid fa-triangle-exclamation"></i>
-          <p></p>
-          <i class="fa-solid fa-triangle-exclamation"></i>
+    <section id="nav-mains">
+      <header id="nav-header">
+        <div>
+          <img src="/images/profile-hex.png" />
         </div>
-        <form method="POST" action="/tweets" id="tweet-form">
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
-
-          <div class="new-tweet-footer">
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
+        <div>
+          <h2>Amy Mansell</h2>
+        </div>
+      </header>
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <section class="new-tweet">
+          <h2>Compose Tweet</h2>
+          <div class="error-container">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <p></p>
+            <i class="fa-solid fa-triangle-exclamation"></i>
           </div>
-        </form>
-      </section>
-      <section id="tweets-container"></section>
-    </main>
+          <form method="POST" action="/tweets" id="tweet-form">
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text"></textarea>
+
+            <div class="new-tweet-footer">
+              <button type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text"
+                >140</output
+              >
+            </div>
+          </form>
+        </section>
+        <section id="tweets-container"></section>
+        <div id="button-scroll">
+          <i class="fa-solid fa-angles-up"></i>
+        </div>
+      </main>
+    </section>
   </body>
 </html>
